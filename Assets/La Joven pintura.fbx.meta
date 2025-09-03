@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: c687c005e9ab9434f80e0d7789059aaa
 ModelImporter:
   serializedVersion: 21300
@@ -14,6 +15,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: La joven
     second: {fileID: 2800000, guid: 95bb34681846d8b4faf61297171d4772, type: 3}
+=======
+guid: 5b95a306945b1284898a124c093efd11
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> Stashed changes
   materials:
     materialImportMode: 2
     materialName: 0
