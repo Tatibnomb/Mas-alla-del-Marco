@@ -4,12 +4,29 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    void OnTriggerEnter (Collision col)
+    public GameObject mensajeUI;
+
+    void Start()
     {
-        Debug.Log("Contacto");
-        if(col.gameObject.name == "Player")
+        if (mensajeUI != null)
+            mensajeUI.SetActive(false);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            if (mensajeUI != null)
+                mensajeUI.SetActive(true);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            if (mensajeUI != null)
+                mensajeUI.SetActive(false);
         }
     }
 }
