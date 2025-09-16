@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    public GameObject mensajeUI;
+    public GameObject hintPanel;
 
     void Start()
     {
-        if (mensajeUI != null)
-            mensajeUI.SetActive(false);
+        if (hintPanel != null)
+            hintPanel.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player") && hintPanel != null)
         {
-            if (mensajeUI != null)
-                mensajeUI.SetActive(true);
+            hintPanel.SetActive(true);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player") && hintPanel != null)
         {
-            if (mensajeUI != null)
-                mensajeUI.SetActive(false);
+            hintPanel.SetActive(false);
         }
     }
 }
