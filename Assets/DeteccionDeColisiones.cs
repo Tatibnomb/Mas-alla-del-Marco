@@ -15,16 +15,12 @@ public class DeteccionDeColisiones : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && hintPanel != null)
-        {
             hintPanel.SetActive(true);
-        }
     }
 
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && hintPanel != null)
-        {
             hintPanel.SetActive(false);
-        }
     }
 }
