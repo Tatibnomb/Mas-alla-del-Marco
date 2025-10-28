@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    public GameObject hintPanel;
+    [Header("Panel principal (Spatial Panel Manipulator Model)")]
+    public GameObject spatialPanel;
 
     void Start()
     {
-        if (hintPanel != null)
-            hintPanel.SetActive(false);
+        // Asegurarse de que el panel empiece oculto
+        if (spatialPanel != null)
+            spatialPanel.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && hintPanel != null)
+        // Si el jugador entra en el área, mostrar el panel
+        if (other.CompareTag("Player") && spatialPanel != null)
         {
-            Debug.Log("Jugador detectado: activando panel");
-            hintPanel.SetActive(true);
+            Debug.Log("Jugador detectado: activando Spatial Panel Manipulator Model");
+            spatialPanel.SetActive(true);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && hintPanel != null)
+        // Si el jugador sale del área, ocultar el panel
+        if (other.CompareTag("Player") && spatialPanel != null)
         {
-            Debug.Log("Jugador salió del área: desactivando panel");
-            hintPanel.SetActive(false);
+            Debug.Log("Jugador salió del área: desactivando Spatial Panel Manipulator Model");
+            spatialPanel.SetActive(false);
         }
     }
 }

@@ -17167,7 +17167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1d54b40519f5f43ad8fff87e03d0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintPanel: {fileID: 167457177}
+  spatialPanel: {fileID: 546380350}
 --- !u!1 &1451002449
 GameObject:
   m_ObjectHideFlags: 0
