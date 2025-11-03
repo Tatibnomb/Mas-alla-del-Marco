@@ -4,33 +4,47 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    [Header("Panel principal (Spatial Panel Manipulator Model)")]
-    public GameObject spatialPanel;
+    [Header("Referencias")]
+    public GameObject coachingCardRoot;
+    public Transform playerCamera;
 
-    void Start()
-    {
-        // Asegurarse de que el panel empiece oculto
-        if (spatialPanel != null)
-            spatialPanel.SetActive(false);
-    }
+    [Header("Configuración")]
+    public float distanceFromCamera = 3f;
+    public float heightOffset = 0.5f;
+    public bool ocultarAlSalir = false;
 
-    void OnTriggerEnter(Collider other)
+    private bool panelActivo = false;
+
+    private void OnTriggerEnter(Collider other)
     {
-        // Si el jugador entra en el área, mostrar el panel
-        if (other.CompareTag("Player") && spatialPanel != null)
+        if (other.CompareTag("Player") && !panelActivo)
         {
-            Debug.Log("Jugador detectado: activando Spatial Panel Manipulator Model");
-            spatialPanel.SetActive(true);
+            Debug.Log("Jugador detectado: mostrando panel");
+
+            coachingCardRoot.SetActive(true);
+            panelActivo = true;
+
+            if (playerCamera != null)
+            {
+                Vector3 forward = playerCamera.forward;
+                forward.y = 0;
+
+                Vector3 position = playerCamera.position + forward.normalized * distanceFromCamera;
+                position.y += heightOffset;
+
+                coachingCardRoot.transform.position = position;
+                coachingCardRoot.transform.rotation = Quaternion.LookRotation(forward);
+            }
         }
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        // Si el jugador sale del área, ocultar el panel
-        if (other.CompareTag("Player") && spatialPanel != null)
+        if (other.CompareTag("Player") && ocultarAlSalir)
         {
-            Debug.Log("Jugador salió del área: desactivando Spatial Panel Manipulator Model");
-            spatialPanel.SetActive(false);
+            Debug.Log("Jugador salió del área: ocultando panel");
+            // coachingCardRoot.SetActive(false);
+            panelActivo = false;
         }
     }
 }
