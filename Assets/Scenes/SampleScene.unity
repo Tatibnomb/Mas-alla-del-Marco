@@ -17269,7 +17269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1d54b40519f5f43ad8fff87e03d0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coachingCardRoot: {fileID: 167457177}
+  coachingCardRoot: {fileID: 546380350}
   playerCamera: {fileID: 1825262783}
   distanceFromCamera: 3
   heightOffset: 0.5
