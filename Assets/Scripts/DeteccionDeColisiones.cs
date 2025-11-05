@@ -9,11 +9,17 @@ public class DeteccionDeColisiones : MonoBehaviour
     public Transform playerCamera;
 
     [Header("Configuración")]
-    public float distanceFromCamera = 1f;
+    public float distanceFromPainting = 0.6f; // distancia lateral del cuadro
     public float heightOffset = 0.5f;
-    public bool ocultarAlSalir = false;
+    public bool ocultarAlSalir = true;
 
     private bool panelActivo = false;
+
+    private void Start()
+    {
+        if (coachingCardRoot != null)
+            coachingCardRoot.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,14 +32,16 @@ public class DeteccionDeColisiones : MonoBehaviour
 
             if (playerCamera != null)
             {
-                Vector3 forward = playerCamera.forward;
-                forward.y = 0;
-
-                Vector3 position = playerCamera.position + forward.normalized * distanceFromCamera;
+                // Poner el panel a la derecha del cuadro
+                Vector3 offset = transform.right * 0.5f;
+                Vector3 position = transform.position + offset;
                 position.y += heightOffset;
 
                 coachingCardRoot.transform.position = position;
-                coachingCardRoot.transform.rotation = Quaternion.LookRotation(forward);
+
+                // Hacer que el panel mire hacia el jugador
+                Vector3 lookDirection = coachingCardRoot.transform.position - playerCamera.position;
+                coachingCardRoot.transform.rotation = Quaternion.LookRotation(lookDirection);
             }
         }
     }
@@ -43,7 +51,7 @@ public class DeteccionDeColisiones : MonoBehaviour
         if (other.CompareTag("Player") && ocultarAlSalir)
         {
             Debug.Log("Jugador salió del área: ocultando panel");
-            // coachingCardRoot.SetActive(false);
+            coachingCardRoot.SetActive(false);
             panelActivo = false;
         }
     }
