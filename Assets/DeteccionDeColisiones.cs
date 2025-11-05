@@ -9,7 +9,7 @@ public class DeteccionDeColisiones : MonoBehaviour
     public Transform playerCamera;
 
     [Header("Configuración")]
-    public float distanceFromCamera = 3f;
+    public float distanceFromCamera = 1f;
     public float heightOffset = 0.5f;
     public bool ocultarAlSalir = false;
 
