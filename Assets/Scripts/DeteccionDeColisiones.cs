@@ -9,9 +9,10 @@ public class DeteccionDeColisiones : MonoBehaviour
     public Transform playerCamera;
 
     [Header("Configuración")]
-    public float distanceFromPainting = 0.6f; // distancia lateral del cuadro
+    public float distanceFromPainting = 0.6f;
     public float heightOffset = 0.5f;
     public bool ocultarAlSalir = true;
+    public float maxDistance = 2f;
 
     private bool panelActivo = false;
 
@@ -32,15 +33,16 @@ public class DeteccionDeColisiones : MonoBehaviour
 
             if (playerCamera != null)
             {
-                // Poner el panel a la derecha del cuadro
-                Vector3 offset = transform.right * 0.5f;
+                // Colocar el panel al costado visible del cuadro
+                Vector3 offset = transform.right * distanceFromPainting;
                 Vector3 position = transform.position + offset;
                 position.y += heightOffset;
 
                 coachingCardRoot.transform.position = position;
 
                 // Hacer que el panel mire hacia el jugador
-                Vector3 lookDirection = coachingCardRoot.transform.position - playerCamera.position;
+                Vector3 lookDirection = playerCamera.position - coachingCardRoot.transform.position;
+                lookDirection.y = 0; // evita que mire hacia arriba o abajo
                 coachingCardRoot.transform.rotation = Quaternion.LookRotation(lookDirection);
             }
         }
@@ -53,6 +55,22 @@ public class DeteccionDeColisiones : MonoBehaviour
             Debug.Log("Jugador salió del área: ocultando panel");
             coachingCardRoot.SetActive(false);
             panelActivo = false;
+        }
+    }
+
+    private void Update()
+    {
+        // Ocultar el panel si el jugador se aleja demasiado
+        if (panelActivo && playerCamera != null && coachingCardRoot != null)
+        {
+            float distancia = Vector3.Distance(playerCamera.position, transform.position);
+
+            if (distancia > maxDistance)
+            {
+                Debug.Log("Jugador se alejó demasiado: ocultando panel");
+                coachingCardRoot.SetActive(false);
+                panelActivo = false;
+            }
         }
     }
 }
