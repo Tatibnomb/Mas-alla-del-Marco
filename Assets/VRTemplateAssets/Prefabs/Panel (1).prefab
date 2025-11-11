@@ -684,7 +684,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9093992022097408147}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1043,7 +1043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6477512983158778462, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_Size
-      value: 0.99999994
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477512983158778462, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8072890477496077224, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_Pivot.x

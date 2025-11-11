@@ -5,21 +5,18 @@ using UnityEngine;
 public class DeteccionDeColisiones : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject coachingCardRoot;
+    public GameObject panelInfo;
     public Transform playerCamera;
 
     [Header("Configuración")]
-    public float distanceFromPainting = 0.6f;
-    public float heightOffset = 0.5f;
     public bool ocultarAlSalir = true;
-    public float maxDistance = 2f;
 
     private bool panelActivo = false;
 
     private void Start()
     {
-        if (coachingCardRoot != null)
-            coachingCardRoot.SetActive(false);
+        if (panelInfo != null)
+            panelInfo.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,22 +25,13 @@ public class DeteccionDeColisiones : MonoBehaviour
         {
             Debug.Log("Jugador detectado: mostrando panel");
 
-            coachingCardRoot.SetActive(true);
+            panelInfo.SetActive(true);
             panelActivo = true;
 
             if (playerCamera != null)
             {
-                // Colocar el panel al costado visible del cuadro
-                Vector3 offset = transform.right * distanceFromPainting;
-                Vector3 position = transform.position + offset;
-                position.y += heightOffset;
-
-                coachingCardRoot.transform.position = position;
-
-                // Hacer que el panel mire hacia el jugador
-                Vector3 lookDirection = playerCamera.position - coachingCardRoot.transform.position;
-                lookDirection.y = 0; // evita que mire hacia arriba o abajo
-                coachingCardRoot.transform.rotation = Quaternion.LookRotation(lookDirection);
+                Vector3 lookDirection = playerCamera.position - panelInfo.transform.position;
+                panelInfo.transform.rotation = Quaternion.LookRotation(lookDirection);
             }
         }
     }
@@ -53,24 +41,8 @@ public class DeteccionDeColisiones : MonoBehaviour
         if (other.CompareTag("Player") && ocultarAlSalir)
         {
             Debug.Log("Jugador salió del área: ocultando panel");
-            coachingCardRoot.SetActive(false);
+            panelInfo.SetActive(false);
             panelActivo = false;
-        }
-    }
-
-    private void Update()
-    {
-        // Ocultar el panel si el jugador se aleja demasiado
-        if (panelActivo && playerCamera != null && coachingCardRoot != null)
-        {
-            float distancia = Vector3.Distance(playerCamera.position, transform.position);
-
-            if (distancia > maxDistance)
-            {
-                Debug.Log("Jugador se alejó demasiado: ocultando panel");
-                coachingCardRoot.SetActive(false);
-                panelActivo = false;
-            }
         }
     }
 }
