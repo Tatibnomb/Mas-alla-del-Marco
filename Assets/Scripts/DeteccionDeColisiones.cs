@@ -31,7 +31,7 @@ public class DeteccionDeColisiones : MonoBehaviour
             if (playerCamera != null)
             {
                 Vector3 lookDirection = playerCamera.position - panelInfo.transform.position;
-                panelInfo.transform.rotation = Quaternion.LookRotation(lookDirection);
+                lookDirection.y = 0;
             }
         }
     }
