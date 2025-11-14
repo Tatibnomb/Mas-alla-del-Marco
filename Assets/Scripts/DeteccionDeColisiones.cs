@@ -1,48 +1,80 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    [Header("Referencias")]
+    [Header("Panel que se mueve y debe volver a su lugar")]
     public GameObject panelInfo;
-    public Transform playerCamera;
 
-    [Header("Configuraci�n")]
+    [Header("Ocultar al salir")]
     public bool ocultarAlSalir = true;
 
-    private bool panelActivo = false;
+    // Guardamos posición/rotación original del panel
+    private Vector3 posicionInicial;
+    private Quaternion rotacionInicial;
 
-    private void Start()
+    private Rigidbody rb;
+
+    void Start()
     {
-        if (panelInfo != null)
-            panelInfo.SetActive(false);
+        if (panelInfo == null)
+        {
+            Debug.LogError("❌ No asignaste el panelInfo en el inspector.");
+            enabled = false;
+            return;
+        }
+
+        // Guardar posición inicial
+        posicionInicial = panelInfo.transform.position;
+        rotacionInicial = panelInfo.transform.rotation;
+
+        // Buscar rigidbody si tiene
+        rb = panelInfo.GetComponent<Rigidbody>();
+
+        // Ocultar al inicio
+        panelInfo.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !panelActivo)
-        {
-            Debug.Log("Jugador detectado: mostrando panel");
+        if (!other.CompareTag("Player")) return;
 
-            panelInfo.SetActive(true);
-            panelActivo = true;
-
-            if (playerCamera != null)
-            {
-                Vector3 lookDirection = playerCamera.position - panelInfo.transform.position;
-                lookDirection.y = 0;
-            }
-        }
+        // Mostrar panel
+        panelInfo.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && ocultarAlSalir)
+        if (!other.CompareTag("Player")) return;
+
+        if (ocultarAlSalir)
         {
-            Debug.Log("Jugador sali� del �rea: ocultando panel");
             panelInfo.SetActive(false);
-            panelActivo = false;
+        }
+
+        // Resetear posición, rotación y física
+        ResetearPanel();
+    }
+
+    private void ResetearPanel()
+    {
+        // Si tiene rigidbody, detener movimiento
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;  // congelarlo un momento
+        }
+
+        // Volver a la posición original
+        panelInfo.transform.position = posicionInicial;
+        panelInfo.transform.rotation = rotacionInicial;
+
+        // Volver a activar el Rigidbody si había uno
+        if (rb != null)
+        {
+            rb.isKinematic = false;
         }
     }
 }
