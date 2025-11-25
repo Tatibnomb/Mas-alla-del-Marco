@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    [Header("Panel (Spatial Panel Scroll)")]
-    public GameObject panelInfo;
+    [Header("Panel que se puede agarrar (Panel 1)")]
+    public GameObject panelMovible;
 
     [Header("El jugador debe tener tag Player")]
     public string playerTag = "Player";
@@ -18,49 +18,49 @@ public class DeteccionDeColisiones : MonoBehaviour
 
     void Start()
     {
-        if (panelInfo == null)
+        if (panelMovible == null)
         {
-            Debug.LogError("No asignaste el panelInfo.");
+            Debug.LogError("No asignaste el panelMovible.");
             enabled = false;
             return;
         }
 
-        // Guardar posición y rotación inicial (pero luego forzaremos Y = 0)
-        posicionInicial = panelInfo.transform.position;
+        // Guardar posición y rotación inicial
+        posicionInicial = panelMovible.transform.position;
 
-        // Rotación inicial con Y = 0 SIEMPRE
+        // Mantener Y = 0
         rotacionInicial = Quaternion.Euler(
-            panelInfo.transform.rotation.eulerAngles.x,
+            panelMovible.transform.rotation.eulerAngles.x,
             0f,
-            panelInfo.transform.rotation.eulerAngles.z
+            panelMovible.transform.rotation.eulerAngles.z
         );
 
-        rb = panelInfo.GetComponent<Rigidbody>();
+        rb = panelMovible.GetComponent<Rigidbody>();
 
-        // Ocultar todo al inicio
-        panelInfo.SetActive(false);
+        // Ocultarlo al inicio
+        panelMovible.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Mostrar panel
-        panelInfo.SetActive(true);
+        // Mostrar panel que se agarra
+        panelMovible.SetActive(true);
 
-        // Restaurar rotación Y = 0 si fue arrastrado antes
-        panelInfo.transform.rotation = rotacionInicial;
+        // Asegurar rotación correcta
+        panelMovible.transform.rotation = rotacionInicial;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Ocultar panel completamente
-        panelInfo.SetActive(false);
-
-        // Resetear posición y rotación
+        // Resetear su posición primero
         ResetearPanel();
+
+        // Ahora sí ocultarlo
+        panelMovible.SetActive(false);
     }
 
     private void ResetearPanel()
@@ -75,10 +75,10 @@ public class DeteccionDeColisiones : MonoBehaviour
         }
 
         // Volver a su lugar original
-        panelInfo.transform.position = posicionInicial;
+        panelMovible.transform.position = posicionInicial;
 
-        // Volver con Y = 0 SIEMPRE
-        panelInfo.transform.rotation = rotacionInicial;
+        // Rotación con Y = 0
+        panelMovible.transform.rotation = rotacionInicial;
 
         if (rb != null)
         {
