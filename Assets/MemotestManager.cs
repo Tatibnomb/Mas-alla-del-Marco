@@ -1,66 +1,94 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class MemotestManager : MonoBehaviour
 {
-    public GameObject cardPrefab;
-    public Transform gridParent;
-    public Sprite[] images;        // im�genes de los cuadros
-    public string[] names;         // nombres para emparejar
+    public GameObject fichaPrefab;      // ANTES: cardPrefab
+    public Transform gridPadre;
 
-    private List<Card> selectedCards = new List<Card>();
+    public List<Sprite> imagenesCuadros;
+    public List<string> nombresCuadros;
 
-    private void Start()
+    private Ficha primeraSeleccion = null;
+    private Ficha segundaSeleccion = null;
+
+    private List<int> indicesBarajados;
+
+    void Start()
     {
-        GenerateCards();
-        gameObject.SetActive(false); // oculto al inicio
+        GenerarMemotest();
     }
 
-    void GenerateCards()
+    void GenerarMemotest()
     {
-        List<int> ids = new List<int>();
-        for (int i = 0; i < images.Length; i++) ids.Add(i);
-        for (int i = 0; i < names.Length; i++) ids.Add(i);
+        indicesBarajados = new List<int>();
+        int total = imagenesCuadros.Count;
 
-        // Mezclar
-        for (int i = 0; i < ids.Count; i++)
+        // duplicar pares
+        for (int i = 0; i < total * 2; i++)
         {
-            int rnd = Random.Range(0, ids.Count);
-            (ids[i], ids[rnd]) = (ids[rnd], ids[i]);
+            indicesBarajados.Add(i % total);
         }
 
-        foreach (int id in ids)
+        // barajar
+        for (int i = 0; i < indicesBarajados.Count; i++)
         {
-            GameObject newCard = Instantiate(cardPrefab, gridParent);
-            Card card = newCard.GetComponent<Card>();
-
-            if (id < images.Length)
-                card.Setup(id, images[id], false);   // imagen
-            else
-                card.Setup(id - images.Length, null, true); // texto
+            int r = Random.Range(0, indicesBarajados.Count);
+            (indicesBarajados[i], indicesBarajados[r]) = (indicesBarajados[r], indicesBarajados[i]);
         }
-    }
 
-    public void CardSelected(Card card)
-    {
-        if (selectedCards.Contains(card)) return;
-
-        selectedCards.Add(card);
-
-        if (selectedCards.Count == 2)
+        // instanciar fichas
+        for (int i = 0; i < indicesBarajados.Count; i++)
         {
-            if (selectedCards[0].pairID == selectedCards[1].pairID)
+            int id = indicesBarajados[i];
+
+            bool esTexto = (i % 2 == 0);
+
+            GameObject nueva = Instantiate(fichaPrefab, gridPadre);
+
+            Ficha ficha = nueva.GetComponent<Ficha>();
+
+            if (esTexto)
             {
-                selectedCards[0].Correct();
-                selectedCards[1].Correct();
+                ficha.Setup(id, null, nombresCuadros[id], true);
             }
             else
             {
-                selectedCards[0].Hide();
-                selectedCards[1].Hide();
+                ficha.Setup(id, imagenesCuadros[id], nombresCuadros[id], false);
             }
-            selectedCards.Clear();
         }
+    }
+
+    // 💥 ESTE MÉTODO YA FUNCIONA
+    public void FichaSeleccionada(Ficha ficha)
+    {
+        if (primeraSeleccion == null)
+        {
+            primeraSeleccion = ficha;
+            return;
+        }
+
+        if (segundaSeleccion == null && ficha != primeraSeleccion)
+        {
+            segundaSeleccion = ficha;
+            Verificar();
+        }
+    }
+
+    void Verificar()
+    {
+        if (primeraSeleccion.pairID == segundaSeleccion.pairID)
+        {
+            primeraSeleccion.Correct();
+            segundaSeleccion.Correct();
+        }
+        else
+        {
+            // Si querés animación de "vuelta", ponela aquí
+        }
+
+        primeraSeleccion = null;
+        segundaSeleccion = null;
     }
 }

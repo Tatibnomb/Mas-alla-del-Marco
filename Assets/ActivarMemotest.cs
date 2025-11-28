@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class ActivarMemotest : MonoBehaviour
 {
-    public GameObject memotestCanvas;
+    public GameObject canvasMemotest;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            memotestCanvas.SetActive(true);
-            Debug.Log("Memotest activado");
+            canvasMemotest.SetActive(true);
         }
     }
 }
