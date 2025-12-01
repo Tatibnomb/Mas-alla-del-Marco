@@ -1,88 +1,48 @@
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class CardSingleUI : MonoBehaviour
+public class CardSingleUI : MonoBehaviour, IPointerClickHandler
 {
-    private CardGroup cardGroup;
+    public Image cardFrontImage;
+    public Image cardBackImage;
 
-    [SerializeField] private Button cardBackButton;
+    [Header("Sprites")]
+    public Sprite frontSprite; // Imagen única
+    public Sprite backSprite;  // Mismo dorso para todas
 
-    [SerializeField] private Image cardBackBackground;
-    [SerializeField] private Image cardFrontBackground;
-    [SerializeField] private Image cardFrontImage;
+    public int pairID; // Identificador del par
 
-    [SerializeField] private GameObject cardBack;
-    [SerializeField] private GameObject cardFront;
-
-    private bool objectMatch;
-
-    [Header("DoTween Animation")]
-    [SerializeField] private Vector3 selectRotation = new Vector3(0, 180, 0);
-    [SerializeField] private Vector3 deselectRotation = Vector3.zero;
-    [SerializeField] private float duration = 0.25f;
-
-    private Tweener[] tweener = new Tweener[2];
-
-    private void Awake()
-    {
-        if (cardGroup == null)
-        {
-            cardGroup = transform.parent.GetComponent<CardGroup>();
-        }
-        cardGroup?.Subscribe(this);
-    }
+    private bool isRevealed = false;
+    private CardGroup group;
 
     private void Start()
     {
-        cardBackButton.onClick.AddListener(OnClick);
+        // asignamos las imágenes
+        cardFrontImage.sprite = frontSprite;
+        cardBackImage.sprite = backSprite;
+
+        group = FindObjectOfType<CardGroup>();
     }
 
-    private void OnClick()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (!objectMatch)
-            cardGroup.OnCardSelected(this);
+        if (!isRevealed)
+            Reveal();
     }
 
-    public void Select()
+    public void Reveal()
     {
-        tweener[0] = transform.DORotate(selectRotation, duration)
-            .SetEase(Ease.InOutQuad)
-            .OnUpdate(CheckSelectHalfDuration);
+        isRevealed = true;
+        cardFrontImage.gameObject.SetActive(true);
+        cardBackImage.gameObject.SetActive(false);
+        group.SelectCard(this);
     }
 
-    public void Deselect()
+    public void Hide()
     {
-        tweener[1] = transform.DORotate(deselectRotation, duration)
-            .SetEase(Ease.InOutQuad)
-            .OnUpdate(CheckDeselectHalfDuration);
+        isRevealed = false;
+        cardFrontImage.gameObject.SetActive(false);
+        cardBackImage.gameObject.SetActive(true);
     }
-
-    private void CheckSelectHalfDuration()
-    {
-        if (tweener[0].Elapsed() >= tweener[0].Duration() / 2f)
-        {
-            cardBack.SetActive(false);
-            cardFront.SetActive(true);
-        }
-    }
-
-    private void CheckDeselectHalfDuration()
-    {
-        if (tweener[1].Elapsed() >= tweener[1].Duration() / 2f)
-        {
-            cardFront.SetActive(false);
-            cardBack.SetActive(true);
-        }
-    }
-
-    public void SetObjectMatch() => objectMatch = true;
-
-    public bool GetObjectMatch() => objectMatch;
-
-    public void DisableCardBackButton() => cardBackButton.interactable = false;
-
-    public Image GetCardFrontBackground() => cardFrontBackground;
-
-    public Image GetCardBackBackground() => cardBackBackground;
 }
