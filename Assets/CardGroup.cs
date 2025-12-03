@@ -1,66 +1,39 @@
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 
 public class CardGroup : MonoBehaviour
 {
-    [SerializeField] private List<CardSingleUI> cardSingleUIList = new List<CardSingleUI>();
-    [SerializeField] private List<CardSingleUI> selectedCardList = new List<CardSingleUI>();
+    public List<CardSingleUI> allCards;
+    public List<CardSingleUI> selectedCards = new List<CardSingleUI>();
 
-    [SerializeField] private Sprite cardIdle;
-    [SerializeField] private Sprite cardActive;
+    public float revealDelay = 1f;
 
-    public event EventHandler OnCardMatch;
-
-    public void Subscribe(CardSingleUI cardSingleUI)
+    public void SelectCard(CardSingleUI card)
     {
-        if (cardSingleUIList == null)
-            cardSingleUIList = new List<CardSingleUI>();
+        selectedCards.Add(card);
 
-        if (!cardSingleUIList.Contains(cardSingleUI))
-            cardSingleUIList.Add(cardSingleUI);
-    }
-
-    public void OnCardSelected(CardSingleUI cardSingleUI)
-    {
-        if (selectedCardList.Count >= 2) return;
-
-        selectedCardList.Add(cardSingleUI);
-
-        cardSingleUI.Select();
-        cardSingleUI.GetCardFrontBackground().sprite = cardActive;
-
-        if (selectedCardList.Count == 2)
+        if (selectedCards.Count == 2)
         {
-            if (CheckIfMatch())
-            {
-                foreach (var card in selectedCardList)
-                {
-                    card.DisableCardBackButton();
-                    card.SetObjectMatch();
-                }
-            }
-            else
-            {
-                StartCoroutine(ResetCards());
-            }
+            StartCoroutine(CheckPair());
         }
     }
 
-    private bool CheckIfMatch()
+    private System.Collections.IEnumerator CheckPair()
     {
-        return selectedCardList[0].name == selectedCardList[1].name;
-    }
+        yield return new WaitForSeconds(revealDelay);
 
-    private System.Collections.IEnumerator ResetCards()
-    {
-        yield return new WaitForSeconds(1f);
-
-        foreach (var card in selectedCardList)
+        if (selectedCards[0].pairID == selectedCards[1].pairID)
         {
-            card.Deselect();
+            // Par correcto → dejarlas reveladas
+            Debug.Log("Par correcto");
+        }
+        else
+        {
+            // Par incorrecto → ocultar
+            selectedCards[0].Hide();
+            selectedCards[1].Hide();
         }
 
-        selectedCardList.Clear();
+        selectedCards.Clear();
     }
 }

@@ -11,4 +11,12 @@ public class ActivarMemotest : MonoBehaviour
             canvasMemotest.SetActive(true);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canvasMemotest.SetActive(false);
+        }
+    }
 }
