@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 10084ebc480d87a428c3b410e2b1ef8f
+guid: 87921f5ac200d5942b6bee2f5eec1a1d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marco
+    second: {fileID: 2100000, guid: 4186bdf8cbcd238489942325d16b1ce1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: c84da4d40f473b1448ebab3e8a9f7aa9, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: La tierra
+    second: {fileID: 2800000, guid: effadaaaadb50254693ab806cc915ad8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Textura marco 1
+    second: {fileID: 2800000, guid: 9f3d80a23cb1f71429af2fd9443d68b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: la joven del aro
+    second: {fileID: 2800000, guid: 90068a4e2d50a294db1dfd99859ca32c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
