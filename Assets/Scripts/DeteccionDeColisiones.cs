@@ -4,40 +4,53 @@ using UnityEngine;
 
 public class DeteccionDeColisiones : MonoBehaviour
 {
-    [Header("Panel que se puede agarrar (Panel 1)")]
+    [Header("Panel general de la escena")]
     public GameObject panelMovible;
 
-    [Header("El jugador debe tener tag Player")]
+    [Header("Texto dentro del panel")]
+    public TMPro.TextMeshProUGUI labelTexto;
+
+    [Header("Punto donde aparecerá el panel junto al cuadro")]
+    public Transform puntoPanel;
+
+    [Header("El jugador debe tener el tag Player")]
     public string playerTag = "Player";
 
-    // Guardar posición original
-    private Vector3 posicionInicial;
-    private Quaternion rotacionInicial;
+    // Info del cuadro
+    private InfoDelCuadro info;
 
-    private Rigidbody rb;
-
-    void Start()
+    private void Start()
     {
         if (panelMovible == null)
         {
-            Debug.LogError("No asignaste el panelMovible.");
+            Debug.LogError("No asignaste el panelMovible en " + name);
             enabled = false;
             return;
         }
 
-        // Guardar posición y rotación inicial
-        posicionInicial = panelMovible.transform.position;
+        if (labelTexto == null)
+        {
+            Debug.LogError("No asignaste labelTexto para el panel en " + name);
+            enabled = false;
+            return;
+        }
 
-        // Mantener Y = 0
-        rotacionInicial = Quaternion.Euler(
-            panelMovible.transform.rotation.eulerAngles.x,
-            0f,
-            panelMovible.transform.rotation.eulerAngles.z
-        );
+        if (puntoPanel == null)
+        {
+            Debug.LogError("No asignaste puntoPanel en " + name);
+            enabled = false;
+            return;
+        }
 
-        rb = panelMovible.GetComponent<Rigidbody>();
+        info = GetComponent<InfoDelCuadro>();
+        if (info == null)
+        {
+            Debug.LogError("Este cuadro no tiene InfoDelCuadro: " + name);
+            enabled = false;
+            return;
+        }
 
-        // Ocultarlo al inicio
+        // Al inicio el panel está oculto
         panelMovible.SetActive(false);
     }
 
@@ -45,45 +58,24 @@ public class DeteccionDeColisiones : MonoBehaviour
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Mostrar panel que se agarra
         panelMovible.SetActive(true);
 
-        // Asegurar rotación correcta
-        panelMovible.transform.rotation = rotacionInicial;
+        // Mover panel al punto del cuadro
+        panelMovible.transform.position = puntoPanel.position;
+
+        Transform player = other.transform;
+        Vector3 direccion = (player.position - panelMovible.transform.position).normalized;
+        direccion.y = 0; // evitar rotación inclinada
+        panelMovible.transform.rotation = Quaternion.LookRotation(direccion);
+
+        labelTexto.text = info.descripcionDelCuadro;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag(playerTag)) return;
 
-        // Resetear su posición primero
-        ResetearPanel();
-
-        // Ahora sí ocultarlo
+        // Ocultar panel al alejarse
         panelMovible.SetActive(false);
-    }
-
-    private void ResetearPanel()
-    {
-        if (rb != null)
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-
-            // Congelar mientras lo recolocamos
-            rb.isKinematic = true;
-        }
-
-        // Volver a su lugar original
-        panelMovible.transform.position = posicionInicial;
-
-        // Rotación con Y = 0
-        panelMovible.transform.rotation = rotacionInicial;
-
-        if (rb != null)
-        {
-            // Reactivar física
-            rb.isKinematic = false;
-        }
     }
 }
