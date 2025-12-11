@@ -64,10 +64,10 @@ public class DeteccionDeColisiones : MonoBehaviour
         panelMovible.transform.position = puntoPanel.position;
 
         Transform player = other.transform;
-        Vector3 direccion = (player.position - panelMovible.transform.position).normalized;
+        Vector3 direccion = ((player.position - panelMovible.transform.position).normalized);
         direccion.y = 0; // evitar rotación inclinada
         panelMovible.transform.rotation = Quaternion.LookRotation(direccion);
-
+        Debug.Log("Panel orientado a: " + direccion);
         labelTexto.text = info.descripcionDelCuadro;
     }
 
@@ -78,4 +78,5 @@ public class DeteccionDeColisiones : MonoBehaviour
         // Ocultar panel al alejarse
         panelMovible.SetActive(false);
     }
+
 }

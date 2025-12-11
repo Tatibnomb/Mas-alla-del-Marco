@@ -446,18 +446,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "Era 1867 y Claude Monet pasaba el verano con su familia
-    en Sainte-Adresse,  una estaci\xF3n balnearia situada en el litoral de la Mancha,
-    en el departamento Sena Mar\xEDtimo en la regi\xF3n de Alta Normand\xEDa. Estamos
-    al norte de Le Havre, porque hemos viajado hasta el norte de Francia. La pintura
-    es un canto a los d\xEDas soleados en la costa de Normand\xEDa, Francia, repleta
-    de barcos de vela, sombrillas y banderas que serpentean, dejando claro que se
-    trata de la brisa costera de un d\xEDa de verano, tiempo de vacaciones de la
-    burgues\xEDa francesa de la d\xE9cada de 1860. Es el cuadro que hoy difunde el
-    Metropolitan Museum de Nueva York en las redes sociales con motivo del d\xEDa
-    del padre en algunos pa\xEDses, entre ellos, Estados Unidos. Y \xBFpor qu\xE9
-    este cuadro? Muy sencillo, en \xE9l aparece un se\xF1or sentado con sombrero
-    de panam\xE1 que representa la figura de su padre junto a otros familiares."
+  descripcionDelCuadro: "Terraza en Sainte-Adresse \u2013 Claude Monet\n\nPintado
+    en 1867 durante un verano familiar en Normand\xEDa, muestra un d\xEDa soleado
+    en la costa, con banderas, sombrillas y barcos, simbolizando las vacaciones de
+    la burgues\xEDa francesa. Es una escena luminosa, alegre y muy representativa
+    del ambiente costero de la \xE9poca. Se relaciona con el D\xEDa del Padre porque
+    incluye la figura del padre de Monet sentado con sombrero de panam\xE1."
 --- !u!114 &20197429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,7 +554,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39807465}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 647a46901d9f0914492ccb871170eff1, type: 3}
   m_Name: 
@@ -2654,14 +2648,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181094839}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.198, y: 0.058, z: 0.104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.198, y: 0.058, z: 0.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1934411162}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181270214
 GameObject:
   m_ObjectHideFlags: 0
@@ -9318,19 +9312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "La Libertad guiando al pueblo es un homenaje a las jornadas
-    del 27, 28 y 29 de julio de 1830, conocidas como las \"Tres Gloriosas\". Se trata
-    de tres d\xEDas de furia revolucionaria en Par\xEDs que sacudieron los cimientos
-    de la ciudad y obligaron a los Borbones \u2013por tercera vez y en esta ocasi\xF3n
-    definitivamente\u2013 a abandonar el trono franc\xE9s. Mucho menos conocidas
-    que la Revoluci\xF3n Francesa que hab\xEDa acabado con el Antiguo R\xE9gimen
-    en 1789, las Trois Glorieuses apuntalaron los nuevos aires pol\xEDticos surgidos
-    cuatro d\xE9cadas antes pusieron definitivamente en manos de los ciudadanos la
-    soberan\xEDa sobre su naci\xF3n.\r\nPero adem\xE1s inspiraron este icono de la
-    pintura rom\xE1ntica. Frente al orden y la pulcritud del neoclasicismo, Eug\xE8ne
-    Delacroix opone una pintura ca\xF3tica y pasional en la que rinde homenaje al
-    pueblo \"noble, hermoso y grande\" que se levant\xF3 contra la tiran\xEDa ese
-    caluroso mes de julio 41 a\xF1os despu\xE9s de la toma de La Bastilla.\r"
+  descripcionDelCuadro: "La Libertad guiando al pueblo \u2013 Delacroix\n\nEs un
+    homenaje a las \u201CTres Gloriosas\u201D (julio de 1830), una revoluci\xF3n
+    parisina que expuls\xF3 definitivamente a los Borbones y reafirm\xF3 la soberan\xEDa
+    ciudadana. Delacroix contrasta el caos revolucionario con el orden neocl\xE1sico
+    y exalta al pueblo que luch\xF3 por su libertad, creando un \xEDcono del romanticismo
+    pol\xEDtico."
 --- !u!114 &606429719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9370,14 +9357,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612807386}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.27, y: 0.07, z: 0.0482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 606429713}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &631120174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9391,15 +9378,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalScale.x
-      value: 16.376402
+      value: 12.61395
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.4107485
+      value: 11.115408
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.932398
+      value: 9.019412
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9407,7 +9394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -56.01
+      value: -56.42
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5829f769fc78b734097504d783c9da26, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9482,16 +9469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "El Columpio, tambi\xE9n conocido como Los Felices Accidentes
-    del Columpio, es una pintura al \xF3leo del siglo XVIII de Jean-Honor\xE9 Fragonard,
-    perteneciente a la Colecci\xF3n Wallace de Londres. Se considera una de las obras
-    maestras del rococ\xF3 y la obra m\xE1s conocida de Fragonard. Contiene varios
-    elementos importantes y con un gran simbolismo en la \xE9poca de fines del siglo
-    XVIII, entre los cuales se destacan los columpios, que eran considerados un s\xEDmbolo
-    de infidelidad; la zapatilla rosa incluso vuela en direcci\xF3n a una estatua
-    de m\xE1rmol alada que se parece mucho a Cupido, el dios romano del amor y el
-    deseo; el poder de la burocracia en t\xE9rminos econ\xF3micos por sobre el resto
-    del pueblo, entre otros."
+  descripcionDelCuadro: "El columpio \u2013 Fragonard\n\nObra clave del rococ\xF3,
+    famosa por su ligereza y simbolismo. El columpio representa la infidelidad y
+    el juego amoroso; la zapatilla volando hacia un Cupido de m\xE1rmol refuerza
+    la idea del deseo. Tambi\xE9n critica el poder econ\xF3mico de la burocracia
+    en el siglo XVIII. Es la pintura m\xE1s reconocida de Fragonard."
 --- !u!114 &631120181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10343,7 +10325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4941219564456579801, guid: 0bb9ae1bda7db3242953875e799d0a9d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4941219564456579801, guid: 0bb9ae1bda7db3242953875e799d0a9d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11852,6 +11834,103 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &795735784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795735785}
+  - component: {fileID: 795735788}
+  - component: {fileID: 795735787}
+  - component: {fileID: 795735786}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &795735785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795735784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: 1.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1825262783}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &795735786
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795735784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &795735787
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795735784}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &795735788
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795735784}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &798385803
 GameObject:
   m_ObjectHideFlags: 0
@@ -12007,7 +12086,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 43aaea1b284d46d4180391b74b62dfe1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 43aaea1b284d46d4180391b74b62dfe1, type: 3}
       propertyPath: m_LocalScale.x
@@ -15388,14 +15467,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058852040}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.496, y: 0.07, z: 0.275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1450821352}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1062730066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18963,17 +19042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "El cuadro \"La joven de la perla\" es una de las obras m\xE1s
-    famosas del pintor Johannes Vermeer de Delft, quien la elabor\xF3 hacia 1665.
-    Conocida tambi\xE9n como Muchacha con turbante o La Mona Lisa holandesa, es una
-    de las piezas m\xE1s representativas del barroco flamenco. En aquella \xE9poca
-    era com\xFAn representar a las mujeres cargadas de joyas, no solo por su estatus
-    social, sino como met\xE1fora de su belleza exterior e interior. En este caso,
-    Vermeer concentra en solo un pendiente de gran brillo y belleza la cualidad del
-    personaje. Quiz\xE1 por eso ha dado rienda suelta a su imaginaci\xF3n representando
-    una \u201Cperla\u201D de singular tama\xF1o. De este modo, la joven y hermosa
-    dama es presentada con la mayor dignidad posible: ella es una joya \xFAnica en
-    su especie."
+  descripcionDelCuadro: "La joven de la perla \u2013 Vermeer\n\nObra ic\xF3nica del
+    barroco flamenco (1665). Presenta a una joven idealizada cuya belleza se concentra
+    en un \xFAnico pendiente de gran tama\xF1o, s\xEDmbolo de pureza y valor. Aunque
+    en la \xE9poca era com\xFAn que las mujeres lleven muchas joyas, Vermeer elige
+    destacar solo una para elevar la dignidad y singularidad del personaje."
 --- !u!114 &1450821360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19748,7 +19821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1564070828}
-  m_MoveSpeed: 200
+  m_MoveSpeed: 4.3563576e+13
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -22094,8 +22167,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.65}
-  m_Center: {x: 0, y: 0.14, z: 0.1}
+  m_Size: {x: 0.6, y: 0.5, z: 0.49268144}
+  m_Center: {x: 0, y: 0.14000002, z: 0.02134014}
 --- !u!114 &1677374481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22108,17 +22181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "Uno de los frescos m\xE1s conocidos de la historia del arte
-    y quiz\xE1s la obra m\xE1s ambiciosa de Rafael, que quiso representar nada menos
-    que los or\xEDgenes del pensamiento occidental, que como todos sabemos naci\xF3
-    en la Antigua Grecia. El artista pinta al dream team de fil\xF3sofos cl\xE1sicos
-    y lo hace poni\xE9ndoles rostros de artistas contempor\xE1neos. As\xED por ejemplo,
-    en el centro tenemos a Plat\xF3n (pintado como Leonardo) y Arist\xF3teles, las
-    dos principales ramas de la filosof\xEDa. Despu\xE9s por ah\xED desperdigados
-    est\xE1n Her\xE1clito (con los rasgos de Miguel \xC1ngel), Euclides (como Bramante),
-    Prot\xF3genes (retratado como su amigo El Sodoma), Hipatia (su novia Margherita)
-    y Apeles (autorretrato del propio Rafael). Tenemos tambi\xE9n a Epicuro, Emp\xE9docles,
-    Parm\xE9nides, S\xF3crates, Di\xF3genes\u2026"
+  descripcionDelCuadro: "La Escuela de Atenas \u2013 Rafael Sanzio\n\nRafael representa
+    el origen del pensamiento occidental reuniendo a los grandes fil\xF3sofos griegos,
+    muchos de ellos con rostros de artistas de su \xE9poca. En el centro aparecen
+    Plat\xF3n (con la cara de Leonardo) y Arist\xF3teles. Tambi\xE9n figuran Her\xE1clito
+    (como Miguel \xC1ngel), Euclides (como Bramante), Hipatia, S\xF3crates, Di\xF3genes
+    y el propio Rafael como Apeles. Es su obra m\xE1s ambiciosa, un homenaje visual
+    a la filosof\xEDa cl\xE1sica."
 --- !u!114 &1677374484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22454,14 +22523,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691521244}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.261, y: 0.088, z: 0.083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1677374478}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1695011982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24914,15 +24983,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156396, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.52
+      value: -2.639
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156396, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.32
+      value: 4.588
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156396, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.36
+      value: 1.175
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156396, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24990,7 +25059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3462571325970164595, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3999487018415155954, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_CameraYOffset
@@ -25050,11 +25119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8189171602916567489, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_MaxHeight
-      value: 1.9
+      value: Infinity
       objectReference: {fileID: 0}
     - target: {fileID: 8189171602916567489, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_MinHeight
-      value: 1.8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8189171602916567492, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_Height
@@ -25073,11 +25142,6 @@ PrefabInstance:
 --- !u!4 &1825262783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2871854915733156396, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
-  m_PrefabInstance: {fileID: 1825262782}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1825262784 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3462571325970164592, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
   m_PrefabInstance: {fileID: 1825262782}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1825262785 stripped
@@ -25838,18 +25902,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "La persistencia de la memoria es un cuadro del pintor surrealista
-    Salvador Dal\xED, que fue ejecutado en el a\xF1o 1931 en menos de cinco horas.
-    La obra tiene unas dimensiones peque\xF1as, de 24 x 33 cm. Adem\xE1s, la obra
-    presenta elementos importantes y con un gran simbolismo como por ejemplo: los
-    relojes derretidos, que representan el tiempo que transcurre de manera diferente;
-    las hormigas en el reloj, ya que el \xFAnico reloj que no est\xE1 deformado es
-    el que est\xE1 volteado hacia abajo y tiene hormigas sobre \xE9l, a Salvador
-    Dal\xED no le gustaban mucho las hormigas y sol\xEDa usarlas como s\xEDmbolo
-    de putrefacci\xF3n en sus obras; el retrato del pintor, ya que la propia figura
-    del pintor aparece en la escena durmiendo debajo de un reloj derretido, y el
-    lugar del sue\xF1o es tambi\xE9n el lugar donde la temporalidad asume otras realidades,
-    entre otros."
+  descripcionDelCuadro: "La persistencia de la memoria \u2013 Salvador Dal\xED\n\nPintado
+    en 1931 en pocas horas, este peque\xF1o cuadro surrealista muestra relojes derretidos
+    que simbolizan la flexibilidad del tiempo. Las hormigas representan la putrefacci\xF3n,
+    un motivo habitual en Dal\xED. En la escena aparece el propio Dal\xED dormido
+    bajo un reloj, indicando el mundo del sue\xF1o como un espacio donde el tiempo
+    funciona de otra manera."
 --- !u!114 &1924101101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26092,8 +26150,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.41}
-  m_Center: {x: 0, y: 0.13, z: 0.06}
+  m_Size: {x: 0.5, y: 0.5, z: 0.3758152}
+  m_Center: {x: 1.97228e-11, y: 0.12999997, z: 0.042907003}
 --- !u!114 &1934411164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26106,16 +26164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1deb8dde74c9e439f334f0764a4bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descripcionDelCuadro: "El cuadro El nacimiento de Venus o La nascita di Venere
-    de Sandro Botticelli fue pintado entre los a\xF1os 1482 y 1485, en pleno contexto
-    hist\xF3rico del Renacimiento. Se trata del primer cuadro en tela pintado en
-    Tuscania, Italia. La obra mide aproximadamente 1,80 metros de alto y 2,75 metros
-    de largo y se encuentra actualmente en el Museo Uffizi en Florencia, Italia.
-    El nacimiento de Venus se inscribe en la sensibilidad propia del Renacimiento,
-    tiempo en que se renov\xF3 la representaci\xF3n de los mitos de la Antig\xFCedad
-    Cl\xE1sica, en los cuales los renacentistas encontraban verdades escondidas sobre
-    la naturaleza humana. Esto signific\xF3 una verdadera defensa del humanismo antropoc\xE9ntrico
-    frente al teocentrismo del pasado."
+  descripcionDelCuadro: "El nacimiento de Venus \u2013 Sandro Botticelli\n\nPintado
+    entre 1482 y 1485 en pleno Renacimiento, es el primer gran cuadro sobre tela
+    en Italia. Representa el mito cl\xE1sico del nacimiento de Venus y refleja el
+    humanismo renacentista, que retomaba la mitolog\xEDa antigua como forma de explorar
+    la naturaleza humana. Hoy se encuentra en el Museo Uffizi de Florencia."
 --- !u!114 &1934411167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26871,7 +26924,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019109835}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaac60576a240bc40aa55994927a3faa, type: 3}
   m_Name: 
@@ -27214,14 +27267,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046586870}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1979, y: 0.073, z: 0.0824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 309712377}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046629158
 GameObject:
   m_ObjectHideFlags: 0
@@ -27250,6 +27303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 135220411}
   - {fileID: 692397218}
   - {fileID: 807051348}
   m_Father: {fileID: 0}
@@ -28558,14 +28612,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127282988}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.245, y: 0.0824, z: 0.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 631120175}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &2130098306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28727,7 +28781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139810511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 2.29, z: -0.8}
+  m_LocalPosition: {x: -3.3, y: 2.79, z: -0.8}
   m_LocalScale: {x: 4.2083416, y: 4.2083416, z: 4.2083416}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30499,15 +30553,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1825262784}
+    m_TransformParent: {fileID: 2046629159}
     m_Modifications:
     - target: {fileID: 1125558484862466373, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1125558484862466373, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1125558484862466373, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -30515,11 +30569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1232257313984862994, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1232257313984862994, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1232257313984862994, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMin.y
@@ -30551,11 +30605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960079817377268184, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2960079817377268184, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2960079817377268184, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -30571,7 +30625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960079817377268184, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4105243931605702096, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_Enabled
@@ -30587,11 +30641,11 @@ PrefabInstance:
       objectReference: {fileID: 1211098200}
     - target: {fileID: 6287911416346982466, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6287911416346982466, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0011322559
+      value: 0.0010504792
       objectReference: {fileID: 0}
     - target: {fileID: 7808687926660000190, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_RootOrder
@@ -30599,15 +30653,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 352
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalScale.x
@@ -30627,11 +30681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139336572992514726, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139336574176275700, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_margin.y
@@ -30639,11 +30693,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalScale.y
@@ -30651,23 +30705,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.538
+      value: -16.666496
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5206991
+      value: -53.4897
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.733
+      value: 3.4748988
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5680594
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30675,7 +30729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8229876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -30687,7 +30741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 110.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8466636609942088233, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -30699,7 +30753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9093992022097408147, guid: d2198adb5d4d29b43975c7c743e5ac8f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 904918416175140025, guid: 87b465b395b11284c9309061bc89d01f, type: 3}
       propertyPath: m_AnchorMax.x
