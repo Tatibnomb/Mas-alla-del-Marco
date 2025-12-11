@@ -19821,7 +19821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1564070828}
-  m_MoveSpeed: 4.3563576e+13
+  m_MoveSpeed: 10
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -25073,6 +25073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Set Up Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7062004111599359807, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
+      propertyPath: m_AimAssistRequiredSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 23882e5e81cefb349bea6dccf9a518c3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -28781,7 +28785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139810511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 2.79, z: -0.8}
+  m_LocalPosition: {x: -3.3, y: 3.133, z: -0.8}
   m_LocalScale: {x: 4.2083416, y: 4.2083416, z: 4.2083416}
   m_ConstrainProportionsScale: 0
   m_Children: []
