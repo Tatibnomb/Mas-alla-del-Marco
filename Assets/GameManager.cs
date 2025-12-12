@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     private CARD carta1 = null;
     private CARD carta2 = null;
+    public float separacionCarta;
+    public Transform PosicionMatch;
 
     private void Awake()
     {
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
             yield return StartCoroutine(AnimarMatch(carta1, carta2));
 
             // Esperar 3 segundos antes de destruir
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
 
             // Destruir las cartas
             Destroy(carta1.gameObject);
@@ -55,7 +57,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator AnimarMatch(CARD c1, CARD c2)
     {
-        Vector3 posFinal = (c1.transform.position + c2.transform.position) / 2f;
+        Vector3 posFinal = PosicionMatch.position;
+        Vector3 posFinal2 = posFinal + Vector3.up * separacionCarta;
 
         float duracion = 0.3f;
         float tiempo = 0f;
@@ -69,14 +72,14 @@ public class GameManager : MonoBehaviour
             float t = tiempo / duracion;
 
             c1.transform.position = Vector3.Lerp(start1, posFinal, t);
-            c2.transform.position = Vector3.Lerp(start2, posFinal, t);
+            c2.transform.position = Vector3.Lerp(start2, posFinal2, t);
 
             yield return null;
         }
 
-        float separacionMinima = 0.3f;
+        //float separacionMinima = 0.3f;
 
-        c1.transform.position = posFinal + new Vector3(0, -separacionMinima / 2f, 0);
-        c2.transform.position = posFinal + new Vector3(0, separacionMinima / 2f, 0);
+        //c1.transform.position = posFinal + new Vector3(0, -separacionMinima / 2f, 0);
+        //c2.transform.position = posFinal + new Vector3(0, separacionMinima / 2f, 0);
     }
 }
