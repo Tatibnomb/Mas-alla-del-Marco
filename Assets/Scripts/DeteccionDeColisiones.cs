@@ -56,6 +56,8 @@ public class DeteccionDeColisiones : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("tRIGGER CON " + other.gameObject.name);
+
         if (!other.CompareTag(playerTag)) return;
 
         panelMovible.SetActive(true);
