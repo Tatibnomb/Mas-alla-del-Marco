@@ -30,10 +30,10 @@ ModelImporter:
       name: la joven del aro
     second: {fileID: 2800000, guid: 90068a4e2d50a294db1dfd99859ca32c, type: 3}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
